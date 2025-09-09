@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehaan Parthanahalli - Professional Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 100%);
+            min-height: 100vh;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            background: transparent;
+        }
+        
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section {
+            min-height: auto;
+            padding: 4rem 1rem;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 15, 35, 0.8);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .body-text {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+        
+        .nav-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .button-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-2px);
+            color: #60a5fa;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+        }
+        
+        .cert-card {
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card:hover {
+            transform: scale(1.02);
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.25rem; }
+            .body-text { font-size: 0.95rem; }
+            .section { padding: 3rem 1rem; }
+        }
+        
+        .mobile-menu {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 15, 35, 0.95);
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div id="particles-js"></div>
+    
+    <div class="content-overlay">
+        <!-- Navigation -->
+        <nav class="navbar fixed top-0 w-full p-4 flex justify-between items-center z-20">
+            <div class="text-xl font-medium text-gradient">Rehaan Parthanahalli</div>
+            
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+            
+            <div id="desktop-menu" class="hidden md:flex space-x-6">
+                <a href="#about" class="nav-text hover:text-blue-400 transition-colors">About</a>
+                <a href="#personal" class="nav-text hover:text-blue-400 transition-colors">Personal Info</a>
+                <a href="#resume" class="nav-text hover:text-blue-400 transition-colors">Resume</a>
+                <a href="#projects" class="nav-text hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#certifications" class="nav-text hover:text-blue-400 transition-colors">Certifications</a>
+                <a href="#contact" class="nav-text hover:text-blue-400 transition-colors">Contact Details</a>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-16 right-4 p-4 rounded-lg shadow-lg z-20 hidden">
+            <div class="space-y-3">
+                <a href="#about" class="block nav-text hover:text-blue-400 transition-colors">About</a>
+                <a href="#personal" class="block nav-text hover:text-blue-400 transition-colors">Personal Info</a>
+                <a href="#resume" class="block nav-text hover:text-blue-400 transition-colors">Resume</a>
+                <a href="#projects" class="block nav-text hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#certifications" class="block nav-text hover:text-blue-400 transition-colors">Certifications</a>
+                <a href="#contact" class="block nav-text hover:text-blue-400 transition-colors">Contact Details</a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="section pt-24 text-center">
+            <h1 class="text-gradient mb-4">Rehaan Parthanahalli</h1>
+            <p class="body-text text-blue-200 mb-6 max-w-lg mx-auto">Engineering Student | Aspiring Tech Professional</p>
+            
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://github.com/RehaanParthanahalli" target="_blank" class="social-icon text-2xl">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/rehaan-parthanahalli-890001383" target="_blank" class="social-icon text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            
+            <!-- Space Facts -->
+            <div class="glass-card rounded-lg p-6 max-w-2xl mx-auto">
+                <h3 class="text-blue-300 mb-4">Fascinating Space Facts</h3>
+                <div class="grid md:grid-cols-2 gap-4 body-text text-gray-300">
+                    <div>• One day on Venus equals 243 Earth days</div>
+                    <div>• A year on Mercury is just 88 Earth days</div>
+                    <div>• Jupiter has 95 known moons</div>
+                    <div>• Saturn's rings are mostly ice particles</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-blue-300 mb-6">About Me</h2>
+                <div class="glass-card rounded-lg p-8">
+                    <div class="space-y-4 body-text text-gray-300 text-left max-w-3xl mx-auto">
+                        <p>I'm a B.Tech Computer Science & Engineering student with a passion for turning complex ideas into clear, engaging solutions—whether it's debugging code, mapping AI workflows, or curating affiliate products with professional polish.</p>
+                        
+                        <p>I thrive at the intersection of tech innovation, creative documentation, and digital entrepreneurship. Strategic thinking in affiliate marketing. From architecting GitHub repos with modular clarity to optimizing Pinterest boards for engagement.</p>
+                        
+                        <p>I learn best through analogies, visual breakdowns, and collaborative exploration—whether I'm simulating AI-powered workflows or writing blog series on Indian agriculture.</p>
+                        
+                        <p class="font-medium text-blue-200">Goal: To build a career that blends creative and impactful ideas in Product, R&D, or Startup environments that can fulfill the urge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Info Section -->
+        <section id="personal" class="section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-blue-300 mb-6 text-center">Personal Information</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="glass-card rounded-lg p-6">
+                        <h3 class="text-blue-200 mb-4">Contact Information</h3>
+                        <div class="space-y-3 body-text text-gray-300">
+                            <div><span class="font-medium">Email:</span> rehaanparthanahalli@gmail.com</div>
+                            <div><span class="font-medium">Phone:</span> +91 8660793155 / +91 9148030125</div>
+                            <div><span class="font-medium">Location:</span> Chennai, Tamil Nadu, India</div>
+                            <div><span class="font-medium">Home:</span> Jamkhandi, Bagalkot, Karnataka</div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card rounded-lg p-6">
+                        <h3 class="text-blue-200 mb-4">Personal Details</h3>
+                        <div class="space-y-3 body-text text-gray-300">
+                            <div><span class="font-medium">Age:</span> 18 years</div>
+                            <div><span class="font-medium">Date of Birth:</span> 06-05-2007</div>
+                            <div><span class="font-medium">Gender:</span> Male</div>
+                            <div><span class="font-medium">Languages:</span> English, Hindi, Kannada</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-lg p-6 mt-6">
+                    <h3 class="text-blue-200 mb-4 text-center">Educational Journey</h3>
+                    <div class="grid md:grid-cols-2 gap-4 body-text text-gray-300">
+                        <div><span class="font-medium">B.Tech CSE:</span> VIT-Vellore Institute of Technology, Chennai</div>
+                        <div><span class="font-medium">PUC I & II:</span> Tungala College, Jamkhandi, Karnataka</div>
+                        <div><span class="font-medium">Class I-X:</span> Royal Palace School, Jamkhandi, Karnataka</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-blue-300 mb-6">Resume</h2>
+                <div class="glass-card rounded-lg p-8">
+                    <p class="body-text text-gray-300 mb-6">N/A</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white button-text px-6 py-3 rounded-lg transition-colors">
+                        Download Resume
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-blue-300 mb-6 text-center">Projects</h2>
+                <div class="flex justify-center">
+                    <div class="glass-card rounded-lg p-8 project-card transition-all duration-300 max-w-md">
+                        <h3 class="text-blue-200 mb-4 text-center">KisaanMart</h3>
+                        <p class="body-text text-gray-300 text-center mb-6">An innovative platform built to connect farmers, empower rural communities, and streamline agricultural exchange, utilizing modern web technologies and user-centric design principles.</p>
+                        <div class="text-center">
+                            <a href="https://kisaan-mart-29f1ef75.base44.app/login?from_url=https://kisaan-mart-29f1ef75.base44.app/&app_id=68a826e50202102129f1ef75" 
+                               target="_blank" 
+                               class="bg-green-600 hover:bg-green-700 text-white button-text px-6 py-3 rounded-lg transition-colors inline-block">
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="bg-[#192239] rounded-xl shadow-lg p-8 max-w-md mx-auto text-center flex flex-col items-center text-blue-200">
+    <i class="fas fa-certificate text-blue-400 text-2xl mb-4"></i>
+    <h3 class="text-blue-200 mb-3 text-2xl">AI Inner Circle</h3>
+    <p class="text-gray-300 mb-0">from BE10x</p>
+</div>
+
+            </div>
+        </section>
+
+        <!-- Contact Details Section -->
+        <section id="contact" class="section">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-blue-300 mb-6 text-center">Contact Details</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <i class="fas fa-envelope text-blue-400 text-2xl mb-3"></i>
+                        <h3 class="text-blue-200 mb-2">Email</h3>
+                        <p class="body-text text-gray-300">rehaanparthanahalli@gmail.com</p>
+                    </div>
+                    
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <i class="fas fa-phone text-blue-400 text-2xl mb-3"></i>
+                        <h3 class="text-blue-200 mb-2">Phone</h3>
+                        <p class="body-text text-gray-300">+91 8660793155<br>+91 9148030125</p>
+                    </div>
+                    
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <i class="fas fa-map-marker-alt text-blue-400 text-2xl mb-3"></i>
+                        <h3 class="text-blue-200 mb-2">Location</h3>
+                        <p class="body-text text-gray-300">Chennai, Tamil Nadu<br>India</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-lg p-6 mt-6 text-center">
+                    <h3 class="text-blue-200 mb-4">Connect With Me</h3>
+                    <div class="flex justify-center space-x-8">
+                        <a href="https://github.com/RehaanParthanahalli" target="_blank" class="social-icon">
+                            <i class="fab fa-github text-3xl"></i>
+                            <p class="body-text mt-2">GitHub</p>
+                        </a>
+                        <a href="https://linkedin.com/in/rehaan-parthanahalli-890001383" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin text-3xl"></i>
+                            <p class="body-text mt-2">LinkedIn</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu
+                if (window.innerWidth < 768) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 120,
+                    density: { enable: true, value_area: 800 }
+                },
+                color: { value: ['#60a5fa', '#a78bfa', '#ffffff'] },
+                shape: {
+                    type: 'circle',
+                    stroke: { width: 0, color: '#000000' }
+                },
+                opacity: {
+                    value: 0.4,
+                    random: true,
+                    anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: { enable: true, speed: 2, size_min: 0.1, sync: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#60a5fa',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 1 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
